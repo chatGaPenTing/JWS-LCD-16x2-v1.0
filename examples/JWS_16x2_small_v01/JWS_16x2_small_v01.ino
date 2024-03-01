@@ -1,6 +1,5 @@
 #include <Wire.h>  // Librari koneksi I2C
 #include <PrayerTimes.h>  // Librari untuk menghitung waktu sholat
-#include <quotes_v1.h>  // Librari berisi kutipan untuk ditampilkan
 
 #include <RTClib.h>  // Librari Real-Time Clock (RTC)
 RTC_DS1307 rtc;  // Inisialisasi objek RTC
@@ -213,7 +212,7 @@ void displayPage5() {
 // Fungsi untuk menampilkan semua halaman secara berurutan
 void displayAllPages() {
   displayPage1();
-  //delay(12000); // delay di sini dimatikan karena digantikan delay di millis displayPage1
+  //delay(3000); // delay di sini dimatikan karena digantikan delay di millis displayPage1
   fadeOut();
   lcd.clear();
   displayPage2();
