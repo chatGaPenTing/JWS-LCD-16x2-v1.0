@@ -90,7 +90,7 @@ void displayPage1() {
   tampilkanHari();
 
   // Tampilkan jam selama 3 detik
-  while (millis() - pageStartTime < 3000) {
+  while (millis() - pageStartTime < 5000) {
     tampilkanJam();
   }
 }
@@ -213,19 +213,15 @@ void displayPage5() {
 void displayAllPages() {
   displayPage1();
   //delay(3000); // delay di sini dimatikan karena digantikan delay di millis displayPage1
-  fadeOut();
   lcd.clear();
   displayPage2();
   delay(3000);
-  fadeOut();
   lcd.clear();
   displayPage3();
   delay(3000);
-  fadeOut();
   lcd.clear();
   displayPage4();
   delay(3000);
-  fadeOut();
   lcd.clear();
   displayPage5();
 }
