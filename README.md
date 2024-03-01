@@ -2,6 +2,7 @@
 
 Program ini gratis dan bisa digunakan siapapun.  
 Masih banyak kekurangan dalam penulisan program ini karena memang tujuannya adalah belajar dari dasar yang diikuti dengan pengembangan hingga tingkat lanjut, dengan alasan itu saya sudah terlebih dahulu memberikan nomor versi.  
+  
 Contoh kekurangannya :  
 - Input lokasi, patokan derajat dan lain-lain masih manual di dalam sketch.  
 - Nama hari dan nama bulan masih menggunakan singkatan 3 huruf.  
