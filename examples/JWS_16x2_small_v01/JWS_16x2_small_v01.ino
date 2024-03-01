@@ -1,4 +1,3 @@
-#include <Wire.h>  // Librari koneksi I2C
 #include <PrayerTimes.h>  // Librari untuk menghitung waktu sholat
 
 #include <RTClib.h>  // Librari Real-Time Clock (RTC)
@@ -102,8 +101,8 @@ void displayPage2() {
 
   // Atur zona waktu, lintang, dan bujur
   int gmt = 7;
-  float latitude = -6.2663638; // Lintang lokasi Anda
-  float longitude = 106.699388; // Bujur lokasi Anda
+  float latitude = -6.1702922; // Lintang lokasi Anda
+  float longitude = 106.831721; // Bujur lokasi Anda
   get_prayer_times(now.year(), now.month(), now.day(), latitude, longitude, gmt, times);
   int hours, minutes;
 
@@ -132,8 +131,8 @@ void displayPage3() {
 
   // Atur zona waktu, lintang, dan bujur
   int gmt = 7;
-  float latitude = -6.2663638; // Lintang lokasi Anda
-  float longitude = 106.699388; // Bujur lokasi Anda
+  float latitude = -6.1702922; // Lintang lokasi Anda
+  float longitude = 106.831721; // Bujur lokasi Anda
   get_prayer_times(now.year(), now.month(), now.day(), latitude, longitude, gmt, times);
   int hours, minutes;
 
@@ -163,8 +162,8 @@ void displayPage4() {
 
   // Atur zona waktu, lintang, dan bujur
   int gmt = 7;
-  float latitude = -6.2663638; // Lintang lokasi Anda
-  float longitude = 106.699388; // Bujur lokasi Anda
+  float latitude = -6.1702922; // Lintang lokasi Anda
+  float longitude = 106.831721; // Bujur lokasi Anda
   get_prayer_times(now.year(), now.month(), now.day(), latitude, longitude, gmt, times);
   int hours, minutes;
 
@@ -194,8 +193,8 @@ void displayPage5() {
 
   // Atur zona waktu, lintang, dan bujur
   int gmt = 7;
-  float latitude = -6.2663638; // Lintang lokasi Anda
-  float longitude = 106.699388; // Bujur lokasi Anda
+  float latitude = -6.1702922; // Lintang lokasi Anda
+  float longitude = 106.831721; // Bujur lokasi Anda
   get_prayer_times(now.year(), now.month(), now.day(), latitude, longitude, gmt, times);
   int hours, minutes;
 
