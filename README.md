@@ -8,7 +8,7 @@ Contoh kekurangannya :
 - Input lokasi, patokan derajat dan lain-lain masih manual di dalam sketch.  
 - Nama hari dan nama bulan masih menggunakan singkatan 3 huruf.  
 - Penanggalan hijriah belum dimasukkan ke dalam v1 dan selanjutnya menunggu dimasukkan ke dalam versi selanjutnya.  
-- Efek animasi tampilan perindahan halaman akan dimasukkan ke dalam versi selanjutnya.  
+- Efek animasi tampilan pindah halaman akan dimasukkan ke dalam versi selanjutnya.  
 - Kutipan nasehat atau kata-kata mutiara juga akan dimasukkan ke dalam versi selanjutnya.  
   
 Untuk Indonesia, setting ketentuan kalkulasi menggunakan data dari KEMENAG yaitu 20° dan 18° yang dimasukkan dalam data berikut:  
