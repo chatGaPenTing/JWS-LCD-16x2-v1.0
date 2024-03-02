@@ -122,11 +122,21 @@ void buatHalaman2()
   lcd.setCursor(0, 0);
   lcd.print("Imsak");
   lcd.setCursor(11, 0);
+  // kurangi 10 menit
+  minutes -= 10;
+  if (minutes < 0) {
+    minutes += 60;
+    hours -= 1;
+    if (hours < 0) {
+      hours = 23; // Kembali ke 23 jika sudah hari sebelumnya
+    }
+  }
   digitNol(hours);
   lcd.print(":");
   digitNol(minutes - 10);
 
   // Shubuh
+  get_float_time_parts(times[0], hours, minutes);
   lcd.setCursor(0, 1);
   lcd.print("Shubuh");
   lcd.setCursor(11, 1);
