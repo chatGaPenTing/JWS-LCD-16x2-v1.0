@@ -9,7 +9,7 @@ static const int NUM_ITERATIONS = 1; // number of iterations needed to compute t
 
 /* ------------------------------------------------------------------------------------------------- */
 static const char *TimeName[] =
-	{
+{
 		"Fajr",
 		"Sunrise",
 		"Dhuhr",
@@ -17,7 +17,9 @@ static const char *TimeName[] =
 		"Sunset",
 		"Maghrib",
 		"Isha",
-		"TimesCount"};
+		"TimesCount"
+};
+
 // Calculation Methods
 enum CalculationMethod
 {
@@ -92,7 +94,6 @@ struct DoublePair
 void compute_times(double times[]);
 void adjust_times(double times[]);
 void day_portion(double times[]);
-void set_calc_method(CalculationMethod method_id);
 void adjust_high_lat_times(double times[]);
 void set_asr_method(JuristicMethod method_id);
 void set_high_lats_adjust_method(AdjustingMethod method_id);
