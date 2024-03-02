@@ -6,8 +6,8 @@ Dengan alasan itu saya sudah terlebih dahulu memberikan nomor versi.
   
 Contoh kekurangannya :  
 - Input lokasi, patokan derajat dan lain-lain masih manual di dalam sketch.  
-- Nama hari dan nama bulan masih menggunakan singkatan 3 huruf.  
-- Penanggalan hijriah belum dimasukkan ke dalam v1 dan selanjutnya menunggu dimasukkan ke dalam versi selanjutnya.  
+- Nama bulan masih menggunakan singkatan 3 huruf.  
+- Penanggalan hijriyyah belum dimasukkan ke dalam v1 dan selanjutnya menunggu dimasukkan ke dalam versi selanjutnya.  
 - Efek animasi tampilan pindah halaman akan dimasukkan ke dalam versi selanjutnya.  
 - Kutipan nasehat atau kata-kata mutiara juga akan dimasukkan ke dalam versi selanjutnya.  
   
