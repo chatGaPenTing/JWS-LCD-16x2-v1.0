@@ -1,4 +1,3 @@
-#include <Arduino.h>
 #include <PrayerTimes_v1.h>
 
 extern double latitude;
