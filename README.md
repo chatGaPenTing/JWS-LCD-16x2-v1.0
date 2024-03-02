@@ -1,4 +1,4 @@
-<p align="center">بِسْمِ اللَّهِ الرحمن الرَّحِيمِ  </p>
+# <p align="center">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
 
 Program ini gratis dan bisa digunakan siapapun.  
 Masih banyak kekurangan dalam penulisan program ini karena memang tujuannya adalah belajar dari dasar untuk dikembangkan hingga tingkat lanjut.  
