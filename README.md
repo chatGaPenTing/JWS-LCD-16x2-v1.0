@@ -1,6 +1,6 @@
 # <p align="center">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
 
-# <p align="center">Jam Waktu Shalat - JWS</p>  
+# <p align="center">Jam Waktu Shalat - JWS LCD 16x2</p>  
     
 ### JWS ini gratis dan bisa digunakan siapapun.  
   
