@@ -28,17 +28,17 @@ set_isha_angle(18);
      
 - Download filenya seperti gambar ini:
     
-![Screenshot 2024-03-02 130144](https://github.com/chatGaPenTing/JWS-LCD-16x2-v1.0/assets/161785031/565224ab-54bf-43e4-8c39-01954d99fb28)
+![unduh480](https://github.com/chatGaPenTing/JWS-LCD-16x2-v1.0/assets/161785031/2854ff19-05fb-4756-a5ff-1f04ad1ed275)
     
 ## Cara Instalasi :    
   
 Buka Arduino IDE, lalu masuk menu --> Sketch --> Include Library --> Add .ZIP Library... :
 
-![Screenshot 2024-03-02 123606](https://github.com/chatGaPenTing/JWS-LCD-16x2-v1.0/assets/161785031/c09636e5-9916-4539-b1c7-ab470f119a18)
+![cara1-320](https://github.com/chatGaPenTing/JWS-LCD-16x2-v1.0/assets/161785031/3f306350-7a76-402a-9080-fe2640f5d3cb)
     
 - Selanjutnya masih di Arduino IDE, masuk menu --> File --> Examples --> JWS-LCD-16x2-v1.0-main --> Sampel_JWS_LCD_16x2_v1 :
     
-![Screenshot 2024-03-02 124300](https://github.com/chatGaPenTing/JWS-LCD-16x2-v1.0/assets/161785031/d440ea17-ae31-4690-8b1b-97d4a00e6427)
+![cara2-320](https://github.com/chatGaPenTing/JWS-LCD-16x2-v1.0/assets/161785031/b24a04dc-d3d3-4131-a117-a6186e70bc96)
   
 ### Tentang Librari PrayerTimes.h dan PrayerTimes.cpp
   
