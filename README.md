@@ -19,4 +19,18 @@ Program masih sangat sederhana karena hanya sebagai bahan pembelajaran.
 
 Pembaharuan akan terus dilakukan agar optimal untuk memperkecil ukuran program.
   
-![image](https://github.com/chatGaPenTing/JWS-v1/assets/161785031/5d6f1150-d299-4aee-96f3-c0f0da71ec85)
+![image](https://github.com/chatGaPenTing/JWS-v1/assets/161785031/5d6f1150-d299-4aee-96f3-c0f0da71ec85)   
+    
+Cara instalasi :    
+     
+- Download repository-nya seperti gambar ini:
+    
+![Screenshot 2024-03-02 130144](https://github.com/chatGaPenTing/JWS-LCD-16x2-v1.0/assets/161785031/565224ab-54bf-43e4-8c39-01954d99fb28)
+    
+- Buka Arduino IDE, lalu masuk menu --> Sketch --> Include Library --> Add .ZIP Library... :
+
+![Screenshot 2024-03-02 123606](https://github.com/chatGaPenTing/JWS-LCD-16x2-v1.0/assets/161785031/c09636e5-9916-4539-b1c7-ab470f119a18)
+    
+- Selanjutnya masih di Arduino IDE, masuk menu --> File --> Examples --> JWS-LCD-16x2-v1.0-main --> Sampel_JWS_LCD_16x2_v1 :
+    
+![Screenshot 2024-03-02 124300](https://github.com/chatGaPenTing/JWS-LCD-16x2-v1.0/assets/161785031/d440ea17-ae31-4690-8b1b-97d4a00e6427)
