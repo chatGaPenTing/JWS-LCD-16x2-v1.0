@@ -105,6 +105,7 @@ double get_julian_date(int year, int month, int day)
 
 	return floor(365.25 * (year + 4716)) + floor(30.6001 * (month + 1)) + day + b - 1524.5;
 }
+
 /* compute prayer times at given julian date */
 void compute_day_times(double times[])
 {
@@ -177,6 +178,7 @@ double compute_time(double g, double t)
 	double v = 1.0 / 15.0 * darccos((-dsin(g) - dsin(d) * dsin(latitude)) / (dcos(d) * dcos(latitude)));
 	return z + (g > 90.0 ? -v : v);
 }
+
 /* compute prayer times at given julian date */
 /* compute the time of Asr */
 double compute_asr(int step, double t) // Shafii: step=1, Hanafi: step=2
@@ -198,6 +200,7 @@ void compute_times(double times[])
 	times[Maghrib] = compute_time(method_params[calc_method].maghrib_value, times[Maghrib]);
 	times[Isha] = compute_time(method_params[calc_method].isha_value, times[Isha]);
 }
+
 /* compute the difference between two times  */
 static double time_diff(double time1, double time2)
 {
@@ -217,6 +220,7 @@ static String two_digits_format(int num)
 	sprintf(tmp, "%2.2d", num);
 	return String(tmp);
 }
+
 /* the night portion used for adjusting times in higher latitudes */
 double night_portion(double angle)
 {
@@ -236,6 +240,7 @@ double night_portion(double angle)
 		return 0;
 	}
 }
+
 /* adjust Fajr, Isha and Maghrib for locations in higher latitudes */
 void adjust_high_lat_times(double times[])
 {
@@ -258,6 +263,7 @@ void adjust_high_lat_times(double times[])
 	if (isnan(times[Maghrib]) || time_diff(times[Sunset], times[Maghrib]) > maghrib_diff)
 		times[Maghrib] = times[Sunset] + maghrib_diff;
 }
+
 /* adjust times in a prayer time array */
 void adjust_times(double times[])
 {
@@ -272,6 +278,7 @@ void adjust_times(double times[])
 	if (adjust_high_lats != None)
 		adjust_high_lat_times(times);
 }
+
 /* convert hours to day portions  */
 void day_portion(double times[])
 {
