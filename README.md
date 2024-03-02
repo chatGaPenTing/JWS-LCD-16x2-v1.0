@@ -3,7 +3,7 @@
 # <p align="center">Jam Waktu Shalat - JWS</p>  
     
 ### JWS ini gratis dan bisa digunakan siapapun.  
-
+  
 ## Tentang Pembuatan JWS
 Masih banyak kekurangan dalam JWS LCD 16x2 ini karena memang tujuannya adalah belajar dari dasar untuk dikembangkan hingga tingkat lanjut.  
 Dengan alasan itu saya sudah terlebih dahulu memberikan nomor versi.  
@@ -45,3 +45,7 @@ Buka Arduino IDE, lalu masuk menu --> Sketch --> Include Library --> Add .ZIP Li
 ### Tentang Librari PrayerTimes.h dan PrayerTimes.cpp
   
 Librari JWS saya ambil dari internet dan tidak ada keterangan header siapa pembuatnya.
+
+## Contoh hasil data jadwal shalat dicocokkan dengan aplikasi Shollu PC :  
+  
+![ulewyldw](https://github.com/chatGaPenTing/JWS-LCD-16x2-v1.0/assets/161785031/1deccfec-f08d-4a16-96c5-027c24eac047)
