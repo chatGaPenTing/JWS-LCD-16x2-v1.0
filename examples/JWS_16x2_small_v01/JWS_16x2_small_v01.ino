@@ -115,7 +115,7 @@ void displayPage2()
   // Dapatkan waktu saat ini dari RTC
   DateTime now = rtc.now();
   
-  get_prayer_times(now.year(), now.month(), now.day(), latitude, longitude, gmt, times);
+  get_prayer_times(now.year(), now.month(), now.day(), latitude, longitude, GMT, times);
 
   // Imsak
   get_float_time_parts(times[0], hours, minutes);
@@ -141,7 +141,7 @@ void displayPage3()
   // Dapatkan waktu saat ini dari RTC
   DateTime now = rtc.now();
   
-  get_prayer_times(now.year(), now.month(), now.day(), latitude, longitude, gmt, times);
+  get_prayer_times(now.year(), now.month(), now.day(), latitude, longitude, GMT, times);
 
   // Syuruq
   get_float_time_parts(times[1], hours, minutes);
@@ -168,7 +168,7 @@ void displayPage4()
   // Dapatkan waktu saat ini dari RTC
   DateTime now = rtc.now();
   
-  get_prayer_times(now.year(), now.month(), now.day(), latitude, longitude, gmt, times);
+  get_prayer_times(now.year(), now.month(), now.day(), latitude, longitude, GMT, times);
 
   // Ashar
   get_float_time_parts(times[3], hours, minutes);
@@ -195,7 +195,7 @@ void displayPage5()
   // Dapatkan waktu saat ini dari RTC
   DateTime now = rtc.now();
   
-  get_prayer_times(now.year(), now.month(), now.day(), latitude, longitude, gmt, times);
+  get_prayer_times(now.year(), now.month(), now.day(), latitude, longitude, GMT, times);
 
   // Isya'
   get_float_time_parts(times[6], hours, minutes);
