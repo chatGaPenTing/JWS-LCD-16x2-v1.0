@@ -92,7 +92,7 @@ void tampilkanJam()
 }
 
 // Fungsi untuk menampilkan halaman 1 di LCD
-void displayPage1()
+void buatHalaman1()
 {
   unsigned long pageStartTime = millis(); // Dapatkan waktu saat ini
 
@@ -110,7 +110,7 @@ void displayPage1()
 }
 
 // Fungsi untuk menampilkan halaman 2 di LCD
-void displayPage2()
+void buatHalaman2()
 {
   // Dapatkan waktu saat ini dari RTC
   DateTime now = rtc.now();
@@ -135,8 +135,8 @@ void displayPage2()
   digitNol(minutes);
 }
 
-// Fungsi untuk menampilkan halaman 4 di LCD
-void displayPage3()
+// Fungsi untuk menampilkan halaman 3 di LCD
+void buatHalaman3()
 {
   // Dapatkan waktu saat ini dari RTC
   DateTime now = rtc.now();
@@ -162,8 +162,8 @@ void displayPage3()
   digitNol(minutes);
 }
 
-// Fungsi untuk menampilkan halaman 5 di LCD
-void displayPage4()
+// Fungsi untuk menampilkan halaman 4 di LCD
+void buatHalaman4()
 {
   // Dapatkan waktu saat ini dari RTC
   DateTime now = rtc.now();
@@ -189,8 +189,8 @@ void displayPage4()
   digitNol(minutes);
 }
 
-// Fungsi untuk menampilkan halaman 6 di LCD
-void displayPage5()
+// Fungsi untuk menampilkan halaman 5 di LCD
+void buatHalaman5()
 {
   // Dapatkan waktu saat ini dari RTC
   DateTime now = rtc.now();
@@ -208,27 +208,27 @@ void displayPage5()
 }
 
 // Fungsi untuk menampilkan semua halaman secara berurutan
-void displayAllPages()
+void semuaHalaman()
 {
-  displayPage1();
-  // delay(3000); // delay di sini dimatikan karena digantikan delay di millis displayPage1
+  buatHalaman1();
+  // delay(3000); // delay di sini dimatikan karena sudah ada delay di millis buatHalaman1
   lcd.clear();
-  displayPage2();
+  buatHalaman2();
   delay(3000);
   lcd.clear();
-  displayPage3();
+  buatHalaman3();
   delay(3000);
   lcd.clear();
-  displayPage4();
+  buatHalaman4();
   delay(3000);
   lcd.clear();
-  displayPage5();
+  buatHalaman5();
 }
 
 // Fungsi loop utama
 void loop()
 {
   lcd.clear();
-  displayAllPages();
+  semuaHalaman();
   delay(2000);
 }
