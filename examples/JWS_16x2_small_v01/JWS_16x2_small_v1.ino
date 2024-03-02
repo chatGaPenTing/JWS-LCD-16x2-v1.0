@@ -1,4 +1,4 @@
-#include <PrayerTimes.h> // Librari untuk menghitung waktu sholat
+#include <PrayerTimes_v1.h> // Librari untuk menghitung waktu sholat
 
 #include <RTClib.h> // Librari Real-Time Clock (RTC)
 RTC_DS1307 rtc;     // Inisialisasi objek RTC
