@@ -1,6 +1,3 @@
-#ifndef Morse_h
-#define Morse_h
-
 static const int NUM_ITERATIONS = 1; // number of iterations needed to compute times
 
 /* ------------------------------------------------------------------------------------------------- */
