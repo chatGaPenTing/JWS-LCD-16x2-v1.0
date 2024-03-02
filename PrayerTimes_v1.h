@@ -2,7 +2,6 @@
 #define Morse_h
 
 #include <Arduino.h>
-#include <math.h>
 #include <string.h>
 
 static const int NUM_ITERATIONS = 1; // number of iterations needed to compute times
