@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include <PrayerTimes.h>
+#include <PrayerTimes_v1.h>
 
 extern double latitude;
 extern double longitude;
