@@ -1,8 +1,10 @@
 # <p align="center">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
 
-# Jam Waktu Shalat - JWS  
+# <p align="center">Jam Waktu Shalat - JWS</p>  
     
-JWS ini gratis dan bisa digunakan siapapun.  
+### JWS ini gratis dan bisa digunakan siapapun.  
+
+## Tentang Pembuatan JWS
 Masih banyak kekurangan dalam JWS LCD 16x2 ini karena memang tujuannya adalah belajar dari dasar untuk dikembangkan hingga tingkat lanjut.  
 Dengan alasan itu saya sudah terlebih dahulu memberikan nomor versi.  
   
