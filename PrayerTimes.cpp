@@ -1,8 +1,8 @@
 #include <Arduino.h>
 #include <PrayerTimes.h>
 
-double latitude;
-double longitude;
+extern double latitude;
+extern double longitude;
 double timezone;
 double julian_date;
 
