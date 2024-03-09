@@ -150,6 +150,6 @@ https://github.com/chatGaPenTing/JWS-LCD-16x2-v1.0/assets/161785031/3bb84285-311
   
 ## DONASI  
 Dukung saya
-- [Es Krim](https://trakteer.id/muhammad_iqbal108/tip)
+- [Es Krim](https://trakteer.id/iqbal1990/tip)
 
   
