@@ -232,6 +232,7 @@ void buatHalaman5()
   lcd.setCursor(11, 1);
   digitNol(hours);
   lcd.print(":");
+  digitNol(minutes);
 }
 
 // Fungsi untuk menampilkan semua halaman secara berurutan
