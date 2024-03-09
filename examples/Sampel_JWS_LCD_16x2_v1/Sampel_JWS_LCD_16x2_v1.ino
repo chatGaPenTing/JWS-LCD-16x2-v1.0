@@ -1,7 +1,7 @@
 #include <PrayerTimes_v1.h> // Librari untuk menghitung waktu sholat
 
 #include <RTClib.h> // Librari Real-Time Clock (RTC)
-RTC_DS1307 rtc;     // Inisialisasi objek RTC
+RTC_DS3231 rtc;     // Inisialisasi objek RTC
 
 #include <LiquidCrystal_I2C.h>      // Librari komunikasi I2C dengan LCD
 LiquidCrystal_I2C lcd(0x27, 16, 2); // Alamat, kolom, dan baris LCD
