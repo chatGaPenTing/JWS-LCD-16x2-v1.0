@@ -13,17 +13,19 @@ char namaHari[7][7] = {"Ahad", "Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sa
 // Array untuk menyimpan waktu sholat yang dihitung
 double times[sizeof(TimeName) / sizeof(char *)];
 
-// Atur zona waktu, lintang, dan bujur
+// Atur zona waktu, lintang, bujur dan altitude
 int GMT = 7; // Perbedaan zona waktu (WIB 7 / WITA 8 / WIT 9)
 float latitude = -6.1702922;  // Lintang lokasi Anda
 float longitude = 106.831721; // Bujur lokasi Anda
+float altitude = 8;        // Ketinggian lokasi Anda dalam satuan meter
 
 int hours, minutes;
 
 // Fungsi inisialisasi dan mengatur parameter perhitungan waktu sholat
 void setup()
 {
-  lcd.init();      // Inisialisasi LCD
+  lcd.init();      // Inisialisasi LCD gunakan salah satu jika ada error karena terkadang librari beda
+  //lcd.begin(16, 2); // Inisialisasi LCD
   lcd.backlight(); // Nyalakan lampu latar LCD
 
   rtc.begin(); // Inisialisasi RTC
@@ -31,8 +33,15 @@ void setup()
   // Hapus komentar pada baris di bawah untuk mengatur waktu awal RTC (ganti dengan waktu awal yang Anda inginkan)
   // rtc.adjust(DateTime(2024, 12, 31, 16, 50, 40));
 
+  // RTC DS3231 mengambil waktu sekarang saat power terputus
+  if (rtc.lostPower())
+  {
+    Serial.println("RTC lost power, let's set the time!");
+    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+  }
+
   // Atur parameter perhitungan waktu sholat
-  set_calc_method(Makkah);                 // Metode perhitungan, opsi ada di PrayerTimes.h
+  set_calc_method(Custom);                 // Metode perhitungan, opsi ada di PrayerTimes.h
   set_asr_method(Shafii);                  // Metode perhitungan Ashar
   set_high_lats_adjust_method(AngleBased); // Metode penyesuaian tinggi lintang
   set_fajr_angle(20);                      // Sudut Fajar (KEMENAG 20 / MESIR 19.5)
@@ -42,7 +51,7 @@ void setup()
 // Fungsi untuk menampilkan tanggal Masehi di LCD
 void tampilkanTanggal()
 {
-  DateTime now = rtc.now(); // Dapatkan waktu saat ini dari RTC
+  DateTime now = rtc.now(); // Ambil waktu sekarang dari RTC
 
   const char *bulan = namaBulan[now.month() - 1]; // Kurangi 1 karena indeks namaBulan dimulai dari 0, bukan 1
   uint16_t tgl = now.day();
@@ -66,7 +75,7 @@ void digitNol(int digits)
 // Fungsi untuk menampilkan hari di LCD
 void tampilkanHari()
 {
-  DateTime now = rtc.now(); // Dapatkan waktu saat ini dari RTC
+  DateTime now = rtc.now(); // Ambil waktu sekarang dari RTC
 
   lcd.setCursor(0, 1);
   lcd.print(namaHari[now.dayOfTheWeek()]);
@@ -75,7 +84,7 @@ void tampilkanHari()
 // Fungsi untuk menampilkan waktu di LCD
 void tampilkanJam()
 {
-  DateTime now = rtc.now(); // Dapatkan waktu saat ini dari RTC
+  DateTime now = rtc.now(); // Ambil waktu sekarang dari RTC
 
   lcd.setCursor(8, 1);
   digitNol(now.hour());
@@ -94,7 +103,7 @@ void tampilkanJam()
 // Fungsi untuk menampilkan halaman 1 di LCD
 void buatHalaman1()
 {
-  unsigned long pageStartTime = millis(); // Dapatkan waktu saat ini
+  unsigned long pageStartTime = millis(); // Ambil waktu sekarang
 
   // Tampilkan tanggal Masehi
   tampilkanTanggal();
@@ -102,8 +111,8 @@ void buatHalaman1()
   // Tampilkan hari
   tampilkanHari();
 
-  // Tampilkan jam selama 3 detik
-  while (millis() - pageStartTime < 5000)
+  // Tampilkan jam selama 10 detik
+  while (millis() - pageStartTime < 10000)
   {
     tampilkanJam();
   }
@@ -112,7 +121,7 @@ void buatHalaman1()
 // Fungsi untuk menampilkan halaman 2 di LCD
 void buatHalaman2()
 {
-  // Dapatkan waktu saat ini dari RTC
+  // Ambil waktu sekarang dari RTC
   DateTime now = rtc.now();
   
   get_prayer_times(now.year(), now.month(), now.day(), latitude, longitude, GMT, times);
@@ -148,7 +157,7 @@ void buatHalaman2()
 // Fungsi untuk menampilkan halaman 3 di LCD
 void buatHalaman3()
 {
-  // Dapatkan waktu saat ini dari RTC
+  // Ambil waktu sekarang dari RTC
   DateTime now = rtc.now();
   
   get_prayer_times(now.year(), now.month(), now.day(), latitude, longitude, GMT, times);
@@ -175,7 +184,7 @@ void buatHalaman3()
 // Fungsi untuk menampilkan halaman 4 di LCD
 void buatHalaman4()
 {
-  // Dapatkan waktu saat ini dari RTC
+  // Ambil waktu sekarang dari RTC
   DateTime now = rtc.now();
   
   get_prayer_times(now.year(), now.month(), now.day(), latitude, longitude, GMT, times);
@@ -189,10 +198,10 @@ void buatHalaman4()
   lcd.print(":");
   digitNol(minutes);
 
-  // Maghrib
-  get_float_time_parts(times[5], hours, minutes);
+  // Sunset
+  get_float_time_parts(times[4], hours, minutes);
   lcd.setCursor(0, 1);
-  lcd.print("Maghrib");
+  lcd.print("Sunset");
   lcd.setCursor(11, 1);
   digitNol(hours);
   lcd.print(":");
@@ -202,26 +211,34 @@ void buatHalaman4()
 // Fungsi untuk menampilkan halaman 5 di LCD
 void buatHalaman5()
 {
-  // Dapatkan waktu saat ini dari RTC
+  // Ambil waktu sekarang dari RTC
   DateTime now = rtc.now();
   
   get_prayer_times(now.year(), now.month(), now.day(), latitude, longitude, GMT, times);
 
-  // Isya'
-  get_float_time_parts(times[6], hours, minutes);
+  // Maghrib
+  get_float_time_parts(times[5], hours, minutes);
   lcd.setCursor(0, 0);
-  lcd.print("Isya'");
+  lcd.print("Maghrib");
   lcd.setCursor(11, 0);
   digitNol(hours);
   lcd.print(":");
   digitNol(minutes);
+
+  // Isya'
+  get_float_time_parts(times[6], hours, minutes);
+  lcd.setCursor(0, 1);
+  lcd.print("Isya'");
+  lcd.setCursor(11, 1);
+  digitNol(hours);
+  lcd.print(":");
 }
 
 // Fungsi untuk menampilkan semua halaman secara berurutan
 void semuaHalaman()
 {
   buatHalaman1();
-  // delay(3000); // delay di sini dimatikan karena sudah ada delay di millis buatHalaman1
+  // delay(10000); // jeda di sini dimatikan karena sudah ada jeda di millis buatHalaman1
   lcd.clear();
   buatHalaman2();
   delay(3000);
@@ -240,5 +257,5 @@ void loop()
 {
   lcd.clear();
   semuaHalaman();
-  delay(2000);
+  delay(3000);
 }
