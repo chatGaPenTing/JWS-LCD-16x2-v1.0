@@ -40,36 +40,17 @@ float altitude = 2000;        // Ketinggian lokasi Anda dalam satuan meter
 ```  
 ---
   
-### Tentang Librari PrayerTimes
-Saya memasukkan parameter penambahan Altitude ke dalam librari sesuai metode perhitungan dari [praytimes.org](http://praytimes.org/calculation). Saya menambahkan data perhitungan ke dalam librari yang awalnya seperti ini :  
+### Tentang Librari PrayerTimes  
+Librari diambil dari [asmaklad/Arduino Prayer Times](https://github.com/asmaklad/Arduino-Prayer-Times) dengan perubahan berupa penambahan kalkulasi Altitude dari saya.
+Saya memasukkan parameter penambahan Altitude ke dalam librari sesuai metode perhitungan dari [praytimes.org](http://praytimes.org/calculation). Saya menambahkan data perhitungan ke dalam librari pada line perhitungan `Sunrise` dan `Sunset` yang awalnya seperti ini :  
 ```cpp
-void compute_times(double times[])
-{
-	day_portion(times);
-
-	times[Fajr] = compute_time(180.0 - method_params[calc_method].fajr_angle, times[Fajr]);
 	times[Sunrise] = compute_time(180.0 - 0.833, times[Sunrise]);
-	times[Dhuhr] = compute_mid_day(times[Dhuhr]);
-	times[Asr] = compute_asr(1 + asr_juristic, times[Asr]);
 	times[Sunset] = compute_time(0.833, times[Sunset]);
-	times[Maghrib] = compute_time(method_params[calc_method].maghrib_value, times[Maghrib]);
-	times[Isha] = compute_time(method_params[calc_method].isha_value, times[Isha]);
-}
 ```
 Untuk diubah menjadi seperti ini :  
 ```cpp
-void compute_times(double times[])
-{
-	day_portion(times);
-
-	times[Fajr] = compute_time(180.0 - method_params[calc_method].fajr_angle, times[Fajr]);
 	times[Sunrise] = compute_time(180.0 - (0.833 + (0.0347 * sqrt(altitude))), times[Sunrise]);
-	times[Dhuhr] = compute_mid_day(times[Dhuhr]);
-	times[Asr] = compute_asr(1 + asr_juristic, times[Asr]);
 	times[Sunset] = compute_time((0.833 + (0.0347 * sqrt(altitude))), times[Sunset]);
-	times[Maghrib] = compute_time(method_params[calc_method].maghrib_value, times[Maghrib]);
-	times[Isha] = compute_time(method_params[calc_method].isha_value, times[Isha]);
-}
 ```
 Selanjutnya menambahkan deklarasi untuk `Altitude` :  
 ```cpp
