@@ -63,11 +63,11 @@ extern double altitude;
 Untuk sebagai bahan riset waktu shalat, saya mengambil 5 lokasi wilayah di 5 pulau besar Indonesia yaitu Sumatra, Jawa, Kalimantan, Sulawesi dan Papua yang mempunyai ketinggian wilayah di atas 1000 meter. Sebagai bahan pembanding riset waktu shalat  saya menggunakan aplikasi PC Accurate Times 5.7. Dan terlihat jelas perbedaan Altitude terhadap *`Syuruq`* dan *`Maghrib`*. Untuk titik riset lokasi berikut saya cantumkan beserta hasil perbedaannya :  
 | Lokasi                                            | Longitude       | Latitude        | Altitude        | *`Syuruq`* tanpa `Altitude` | *`Syuruq`* pakai `Altitude` | *`Maghrib`* tanpa `Altitude` | *`Maghrib`* pakai `Altitude` |
 |---------------------------------------------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|
-| Aceh - Masjid Al-Azhar/Sahara Gunung Geureudong   | 96.773333       | 4.790000        | 1300 meters     | 06:42           | 06:36           | 18:45           | 18:51           |
-| Jawa Barat - Masjid Al-Amin Taman Safari          | 106.950607      | -6.720000       | 1150 meters     | 05:57           | 05:52           |	18:08           | 18:13           |
-| Kalimanta Barat - Taman Nasional Bukit Baka       | 112.435556      | -0.050556       | 1490 meters     | 05:37           | 05:32           |	17:44           | 17:50           |
-| Sulawesi Selatan - Masjid Gunung Lompobattang     | 119.865503      | -5.360541       | 1180 meters     | 06:06           | 06:01           |	18:16           | 18:21           |
-| Papua - Masjid Nurul Falah Puncak Trikora         | 138.915000      | -4.151111	| 2000 meters     | 05:50           | 05:43           |	17:59           | 18:06           |
+| Aceh - Masjid Al-Azhar/Sahara Gunung Geureudong   | 96.773333       | 4.790000        | 1300 meter     | 06:42           | 06:36           | 18:45           | 18:51           |
+| Jawa Barat - Masjid Al-Amin Taman Safari          | 106.950607      | -6.720000       | 1150 meter     | 05:57           | 05:52           |	18:08           | 18:13           |
+| Kalimanta Barat - Taman Nasional Bukit Baka       | 112.435556      | -0.050556       | 1490 meter     | 05:37           | 05:32           |	17:44           | 17:50           |
+| Sulawesi Selatan - Masjid Gunung Lompobattang     | 119.865503      | -5.360541       | 1180 meter     | 06:06           | 06:01           |	18:16           | 18:21           |
+| Papua - Masjid Nurul Falah Puncak Trikora         | 138.915000      | -4.151111	| 2000 meter     | 05:50           | 05:43           |	17:59           | 18:06           |
 
 ---
 
