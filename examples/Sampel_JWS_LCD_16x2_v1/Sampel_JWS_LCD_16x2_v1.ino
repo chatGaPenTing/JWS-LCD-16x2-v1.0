@@ -13,11 +13,11 @@ char namaHari[7][7] = {"Ahad", "Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sa
 // Array untuk menyimpan waktu sholat yang dihitung
 double times[sizeof(TimeName) / sizeof(char *)];
 
-// Atur zona waktu, lintang, bujur dan altitude
+// Atur zona waktu, lintang, bujur dan elevasi
 int GMT = 7; // Perbedaan zona waktu (WIB 7 / WITA 8 / WIT 9)
 float latitude = -6.1702922;  // Lintang lokasi Anda
 float longitude = 106.831721; // Bujur lokasi Anda
-float altitude = 8;        // Ketinggian lokasi Anda dalam satuan meter
+float elevation = 8;        // Ketinggian lokasi Anda dalam satuan meter
 
 int hours, minutes;
 
