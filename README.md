@@ -1,5 +1,5 @@
 # <p align="center">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
-# <p align="center">![JWS Fullscreen Tinker-240p](https://github.com/chatGaPenTing/JWS-LCD-16x2-v1.0/assets/161785031/f6aeac52-6d8a-4f4c-aaec-869a1f0dbf4e)
+# <p align="center">![Cover-240](https://github.com/chatGaPenTing/JWS-LCD-16x2-v1.0/assets/161785031/c71c414a-86ca-4d4a-8df7-42b77aa364ab)
 </p>
 
 ### JWS ini gratis dan bisa digunakan siapapun.  
@@ -9,15 +9,15 @@ Masih banyak kekurangan dalam JWS LCD 16x2 ini karena memang tujuannya adalah be
 Dengan alasan itu saya sudah terlebih dahulu memberikan nomor versi.  
   
 Contoh kekurangannya :  
-- Input longitude, latitude, altitude, patokan derajat dan lain-lain masih manual di dalam sketch.  
+- Input longitude, latitude, elevasi, patokan derajat dan lain-lain masih manual di dalam sketch.  
 - Nama bulan masih menggunakan singkatan 3 huruf.  
 - Penanggalan hijriyyah belum dimasukkan dan selanjutnya menunggu dimasukkan ke dalam versi selanjutnya.  
 - Efek animasi tampilan pindah halaman akan dimasukkan ke dalam versi selanjutnya.  
 - Kutipan nasehat atau kata-kata mutiara juga akan dimasukkan ke dalam versi selanjutnya.  
 ---
-## Altitude JWS
-Saya melihat jarang aplikasi JWS Arduino yang melampirkan `Altitude` sebagai tambahan parameter kalkulasi. Memang Altitude ini hanya mempengaruhi jadwal *`Syuruq`* dan *`Maghrib`* yang di dalam rumusnya ditambahkan nilai `Sun Altitude` sebagai parameter kalkulasi.  
-Berdasar percobaan saya, setiap `Altitude 100 meter` itu ada perbedaan `1 menit` dan seumpama teman-teman di wilayah Bogor yang beberapa wilayah dengan Altitude 1000 meter maka akan terjadi perbedaan cukup jauh di atas 5 menit jika menggunakan `JWS tanpa paramater Altitude`.
+## Elevasi dalam JWS
+Saya melihat jarang aplikasi JWS Arduino yang melampirkan `Elevasi` sebagai tambahan parameter kalkulasi. Memang Elevasi ini hanya mempengaruhi jadwal *`Syuruq`* dan *`Maghrib`* yang di dalam rumusnya ditambahkan nilai `Sun Elevasi` sebagai parameter kalkulasi.  
+Berdasar percobaan saya, setiap `Elevasi 100 meter` itu ada perbedaan `1 menit` dan seumpama teman-teman di wilayah Bogor yang beberapa wilayah dengan Elevasi 1000 meter maka akan terjadi perbedaan cukup jauh di atas 5 menit jika menggunakan `JWS tanpa paramater Elevasi`.
 
 ---
 ## Kalkulasi Negara Indonesia
@@ -30,38 +30,38 @@ Untuk Indonesia, setting ketentuan kalkulasi menggunakan data dari KEMENAG yaitu
   set_fajr_angle(20);                      // Sudut Fajar (KEMENAG 20 / MESIR 19.5)
   set_isha_angle(18);                      // Sudut Isya' (KEMENAG 18 / MESIR 17.5)
 ```
-Untuk pengaturan lokasi gunakan parameter longitude, latitude, altitude dan zona waktu yang bisa anda dapatkan dari internet. Masukkan parameter tersebut seperti contoh di sini :  
+Untuk pengaturan lokasi gunakan parameter longitude, latitude, elevasi dan zona waktu yang bisa anda dapatkan dari internet. Masukkan parameter tersebut seperti contoh di sini :  
 ```cpp
-// Atur parameter zona waktu, lintang, bujur dan altitude
+// Atur parameter zona waktu, lintang, bujur dan elevasi
 int GMT = 9;                  // Perbedaan zona waktu (WIB 7 / WITA 8 / WIT 9)
 float latitude = -4.151111;   // Lintang lokasi Anda, tambah tanda - jika anda di wilayah S (South)
 float longitude = 138.915000; // Bujur lokasi Anda
-float altitude = 2000;        // Ketinggian lokasi Anda dalam satuan meter   
+float elevation = 2000;        // Ketinggian lokasi Anda dalam satuan meter   
 ```  
 ---
   
 ### Tentang Librari PrayerTimes  
-Librari diambil dari [asmaklad/Arduino Prayer Times](https://github.com/asmaklad/Arduino-Prayer-Times) dengan perubahan berupa penambahan kalkulasi Altitude dari saya.
-Saya memasukkan parameter penambahan Altitude ke dalam librari sesuai metode perhitungan dari [praytimes.org](http://praytimes.org/calculation). Saya menambahkan data perhitungan ke dalam librari pada line perhitungan `Sunrise` dan `Sunset` yang awalnya seperti ini :  
+Librari diambil dari [asmaklad/Arduino Prayer Times](https://github.com/asmaklad/Arduino-Prayer-Times) dengan perubahan berupa penambahan kalkulasi Elevasi dari saya.
+Saya memasukkan parameter penambahan Elevasi ke dalam librari sesuai metode perhitungan dari [praytimes.org](http://praytimes.org/calculation). Saya menambahkan data perhitungan ke dalam librari pada line perhitungan `Sunrise` dan `Sunset` yang awalnya seperti ini :  
 ```cpp
 	times[Sunrise] = compute_time(180.0 - 0.833, times[Sunrise]);
 	times[Sunset] = compute_time(0.833, times[Sunset]);
 ```
 Untuk diubah menjadi seperti ini :  
 ```cpp
-	times[Sunrise] = compute_time(180.0 - (0.833 + (0.0347 * sqrt(altitude))), times[Sunrise]);
-	times[Sunset] = compute_time((0.833 + (0.0347 * sqrt(altitude))), times[Sunset]);
+	times[Sunrise] = compute_time(180.0 - (0.833 + (0.0347 * sqrt(elevation))), times[Sunrise]);
+	times[Sunset] = compute_time((0.833 + (0.0347 * sqrt(elevation))), times[Sunset]);
 ```
-Selanjutnya menambahkan deklarasi untuk `Altitude` :  
+Selanjutnya menambahkan deklarasi untuk `Elevasi` :  
 ```cpp
-extern double altitude;
+extern double elevation;
 ```
 
 ---
 
-## Percobaan hasil penambahan Altitude  
-Untuk sebagai bahan riset waktu shalat, saya mengambil 5 lokasi wilayah di 5 pulau besar Indonesia yaitu Sumatra, Jawa, Kalimantan, Sulawesi dan Papua yang mempunyai ketinggian wilayah di atas 1000 meter. Sebagai bahan pembanding riset waktu shalat  saya menggunakan aplikasi PC Accurate Times 5.7. Dan terlihat jelas perbedaan Altitude terhadap *`Syuruq`* dan *`Maghrib`*. Untuk titik riset lokasi berikut saya cantumkan beserta hasil perbedaannya :  
-| Lokasi                                            | Longitude       | Latitude        | Altitude        | *`Syuruq`* tanpa `Altitude` | *`Syuruq`* pakai `Altitude` | *`Maghrib`* tanpa `Altitude` | *`Maghrib`* pakai `Altitude` |
+## Percobaan hasil penambahan Elevasi  
+Untuk sebagai bahan riset waktu shalat, saya mengambil 5 lokasi wilayah di 5 pulau besar Indonesia yaitu Sumatra, Jawa, Kalimantan, Sulawesi dan Papua yang mempunyai ketinggian wilayah di atas 1000 meter. Sebagai bahan pembanding riset waktu shalat  saya menggunakan aplikasi PC Accurate Times 5.7. Dan terlihat jelas perbedaan Elevasi terhadap *`Syuruq`* dan *`Maghrib`*. Untuk titik riset lokasi berikut saya cantumkan beserta hasil perbedaannya :  
+| Lokasi                                            | Longitude       | Latitude        | Elevasi        | *`Syuruq`* tanpa `Elevasi` | *`Syuruq`* pakai `Elevasi` | *`Maghrib`* tanpa `Elevasi` | *`Maghrib`* pakai `Elevasi` |
 |---------------------------------------------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|
 | Aceh - Masjid Al-Azhar/Sahara Gunung Geureudong   | 96.773333       | 4.790000        | 1300 meter     | 06:42           | 06:36           | 18:45           | 18:51           |
 | Jawa Barat - Masjid Al-Amin Taman Safari          | 106.950607      | -6.720000       | 1150 meter     | 05:57           | 05:52           |	18:08           | 18:13           |
@@ -72,7 +72,7 @@ Untuk sebagai bahan riset waktu shalat, saya mengambil 5 lokasi wilayah di 5 pul
 ---
 
 <details>
-<summary>Dan berikut hasil riset tentang pengaruh Altitude menggunakan aplikasi PC Accurate Times 5.7 :</summary>  
+<summary>Dan berikut hasil riset tentang pengaruh Elevasi menggunakan aplikasi PC Accurate Times 5.7 :</summary>  
     
 `Sumatra - Aceh`  
 ![Aceh Diff](https://github.com/chatGaPenTing/JWS-LCD-16x2-v1.0/assets/161785031/6ac6f40e-7577-4293-aff3-f48e78b427f8)
