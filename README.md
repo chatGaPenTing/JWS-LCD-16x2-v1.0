@@ -2,8 +2,10 @@
 # <p align="center">![Cover-240](https://github.com/chatGaPenTing/JWS-LCD-16x2-v1.0/assets/161785031/c71c414a-86ca-4d4a-8df7-42b77aa364ab)
 </p>
 
-### JWS ini gratis dan bisa digunakan siapapun.  
----
+---  
+[![https://trakteer.id/iqbal1990/tip](https://img.shields.io/badge/Donasi-Traktir%20Es%20Krim-orange?style=for-the-badge)](https://trakteer.id/iqbal1990/tip)  
+### JWS ini bisa digunakan siapapun.  
+---  
 ## Tentang Pembuatan JWS
 Masih banyak kekurangan dalam JWS LCD 16x2 ini karena memang tujuannya adalah belajar dari dasar untuk dikembangkan hingga tingkat lanjut.  
 Dengan alasan itu saya sudah terlebih dahulu memberikan nomor versi.  
